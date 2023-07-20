@@ -1,11 +1,54 @@
-<%- include ('templates/header.ejs') %>
+<%- include ('templates/header.ejs', {
+    titulo: "Página de Contacto",
+    descripcion: "Esta es la descripción sobre la página de contacto"
+}) %>
 <%- include ('templates/nav.ejs') %>
 
 
 <main>
     <h1>Contacto</h1>
 
-    <%- include ('templates/formularioContacto.ejs') %>
+    <div class="container">
+        <form>
+            <div class="grupoForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class=grupoForm>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="grupoForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="grupoForm">
+                <label for="telefono">Telefono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="grupoForm">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" rows="10" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="containerContacto">
+        <% contacto.forEach(element => { %>
+            <div>
+                <ul class="listaContacto">
+                    <li class="valor"><%=element.direccion%></li>
+                    <li class="valor"><%=element.telefono%></li>
+                    <li class="valor"><%=element.email%></li>
+                </ul>
+            </div>
+         
+        <% }) %>
+    </div>
+</main>
+
+
 </main>
 
 <%- include ('templates/footer.ejs') %>
