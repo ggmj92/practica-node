@@ -1,12 +1,31 @@
-<%- include ('templates/header.ejs') %>
-<%- include ('templates/nav.ejs') %>
+<%- include ('templates/header.ejs', { titulo: "Staff" ,
+    descripcion: "Esta es la descripción acerca de nuestros profesores" }) %>
+    <%- include ('templates/nav.ejs') %>
 
+        <main>
+            <h1>Profesores</h1>
+            <p class="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, laudantium nam sapiente
+                praesentium quam sint voluptates, perferendis tenetur neque commodi, soluta reprehenderit. Labore
+                asperiores, iusto libero nihil numquam fuga. Accusantium accusamus ipsum architecto et! Omnis suscipit
+                impedit alias, placeat delectus similique quo repellendus mollitia fugit, iusto numquam praesentium!
+                Necessitatibus maiores porro quos delectus neque libero a sed voluptas, rem illum est eaque odio tempore
+                minima consequuntur, molestias eligendi eius ex ratione provident accusamus voluptatibus temporibus?
+                Tempora, laborum ullam. Esse, numquam? Explicabo blanditiis et minus hic cupiditate. Ratione ipsam
+                aliquid reprehenderit. Assumenda, consequuntur. Praesentium perspiciatis ut eum ex sunt, et tempora.</p>
 
-<main>
-    <h1>Profesores</h1>
-    <p id="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, laudantium nam sapiente praesentium quam sint voluptates, perferendis tenetur neque commodi, soluta reprehenderit. Labore asperiores, iusto libero nihil numquam fuga. Accusantium accusamus ipsum architecto et! Omnis suscipit impedit alias, placeat delectus similique quo repellendus mollitia fugit, iusto numquam praesentium! Necessitatibus maiores porro quos delectus neque libero a sed voluptas, rem illum est eaque odio tempore minima consequuntur, molestias eligendi eius ex ratione provident accusamus voluptatibus temporibus? Tempora, laborum ullam. Esse, numquam? Explicabo blanditiis et minus hic cupiditate. Ratione ipsam aliquid reprehenderit. Assumenda, consequuntur. Praesentium perspiciatis ut eum ex sunt, et tempora.</p>
+            <div class="flexContainer">
+                <% profesores.forEach(element=> { %>
+                    <article>
+                        <h2>
+                            <%=element.nombre%>
+                        </h2>
+                        <div>
+                            <img src="/assets/<%= element.url %>" alt="<%=element.url%>">
+                        </div>
+                        <p> <%=element.descripcion%></p>
+                    </article>
 
-    <%- include('templates/divImgProf.ejs') %>
-</main>
+                    <% }) %>
+            </div>
 
-<%- include ('templates/footer.ejs') %>
+        <%- include ('templates/footer.ejs') %>∫

@@ -1,12 +1,35 @@
-<%- include ('templates/header.ejs') %>
+<%- include ('templates/header.ejs', {
+    titulo: "Bienvenida",
+    descripcion: "Esta es la descripción del index"
+}) %>
 <%- include ('templates/nav.ejs') %>
 
 <main>
     <h1>Bienvenidos a nuestra escuela</h1>
     
-    <p id="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum consequuntur reiciendis saepe iusto nulla facilis dignissimos fuga nam deserunt quae, deleniti excepturi molestias voluptates veniam consectetur dolorem tempora maxime blanditiis sed! Architecto et voluptatem aut reprehenderit alias, culpa officiis distinctio perferendis ea, consectetur earum! Asperiores suscipit ullam sunt, laboriosam ab iure facere culpa a quas, voluptate nostrum quam architecto quasi eius quidem perferendis molestias laudantium beatae minus quae. Fuga hic vel non nulla animi neque amet quisquam impedit distinctio sequi odit nihil reprehenderit quo, ad tenetur quidem a nisi magnam assumenda odio illo id dignissimos ratione. Nisi, amet praesentium!</p>
+    <p class="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum consequuntur reiciendis saepe iusto nulla facilis dignissimos fuga nam deserunt quae, deleniti excepturi molestias voluptates veniam consectetur dolorem tempora maxime blanditiis sed! Architecto et voluptatem aut reprehenderit alias, culpa officiis distinctio perferendis ea, consectetur earum! Asperiores suscipit ullam sunt, laboriosam ab iure facere culpa a quas, voluptate nostrum quam architecto quasi eius quidem perferendis molestias laudantium beatae minus quae. Fuga hic vel non nulla animi neque amet quisquam impedit distinctio sequi odit nihil reprehenderit quo, ad tenetur quidem a nisi magnam assumenda odio illo id dignissimos ratione. Nisi, amet praesentium!</p>
 
-    <%- include('templates/divImgPrincipal.ejs') %>
+    <div class="flexContainer">
+        <% imgPrincipal.forEach(element => { %>
+        <article>
+            <div>
+                <img src="/assets/<%=element.url%>" alt="<%=element.alt%>">
+            </div>
+            <p><%=element.descripcion%></p>
+        </article>
+        <% }) %>
+    </div>
+
+    <p class="pMain">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in, quod eum quae ullam quos. Atque rem quo veniam debitis molestiae assumenda maiores voluptatem? Odit quidem, fuga cumque dolorem magni eligendi quis voluptatem eaque cupiditate nihil doloremque autem quibusdam inventore laudantium a alias consequuntur architecto rem, sed distinctio quas qui.
+    </p>
+    <p class="pMain">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis debitis placeat dolore repellendus natus numquam est maxime dolor doloribus excepturi voluptatibus quam asperiores nihil, nam similique deleniti impedit libero architecto provident nostrum at totam hic. Ea dolorem labore non enim.
+
+    </p>
+    <p class="pMain">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quos iusto ducimus accusamus ut doloribus eaque eveniet doloremque, adipisci libero delectus vel inventore quod asperiores quidem iure. Fuga voluptatum quisquam asperiores quae neque eaque eum laborum quod dolor quibusdam molestiae aliquam commodi ipsa dolorem expedita quaerat, repudiandae doloremque sunt ut voluptates earum dicta minima! Libero expedita voluptatem maxime eligendi nisi fuga impedit numquam assumenda? Nisi reiciendis cumque enim eaque ab rerum! Quis obcaecati repellat eum?
+    </p>
     
 </main>
 

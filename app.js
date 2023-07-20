@@ -12,24 +12,12 @@ app.set('view engine', 'ejs');
 
 app.set("views",__dirname+"/views");
 
-app.get('/',(req,res)=>{
-    res.render('index',{})
-})
+app.use('/',require('./routes/frontRoutes'));
 
-app.get('/cursos', (req,res)=> {
-    res.render('cursos',{})
-})
-
-app.get('/instalaciones', (req,res)=> {
-    res.render('instalaciones',{})
-})
-
-app.get('/profesores', (req,res)=> {
-    res.render('profesores',{})
-})
-
-app.get('/contacto', (req,res)=> {
-    res.render('contacto',{})
+app.use((req,res)=> {
+    res.status(404).render("404",{
+        titulo: 'error 404'
+    })
 })
 
 app.listen(port,()=>{

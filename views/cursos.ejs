@@ -1,12 +1,37 @@
-<%- include ('templates/header.ejs') %>
-<%- include ('templates/nav.ejs') %>
+<%- include ('templates/header.ejs', { titulo: "Cursos Ofrecidos" ,
+    descripcion: "Esta es la descripción acerca de nuestros cursos" }) %>
+    <%- include ('templates/nav.ejs') %>
 
 
-<main>
-    <h1>Cursos</h1>
-    <p id="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nesciunt cumque ab illum eveniet. Quibusdam vel incidunt tempora inventore minus, fugit eligendi maxime aspernatur atque? Perferendis quibusdam suscipit nemo, impedit accusamus esse libero. Odit asperiores sit, fugiat aut ipsa minus mollitia amet exercitationem perferendis a accusamus! Non veritatis iusto quas in, suscipit, vero tenetur saepe maiores assumenda sit distinctio animi ea voluptas! Natus voluptatibus fuga nemo, ut molestiae sequi quo voluptatem quod corporis placeat dolor sed voluptatum asperiores, odio commodi eius? Adipisci debitis suscipit sapiente praesentium tempora illum unde dignissimos architecto rem, vitae perferendis a consequuntur ex recusandae quasi omnis.</p>
+        <main>
+            <h1>Cursos</h1>
 
-    <%- include('templates/divImgCursos.ejs') %>
-</main>
 
-<%- include ('templates/footer.ejs') %>
+            <p class="pMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nesciunt cumque ab illum
+                eveniet. Quibusdam vel incidunt tempora inventore minus, fugit eligendi maxime aspernatur atque?
+                Perferendis quibusdam suscipit nemo, impedit accusamus esse libero. Odit asperiores sit, fugiat aut ipsa
+                minus mollitia amet exercitationem perferendis a accusamus! Non veritatis iusto quas in, suscipit, vero
+                tenetur saepe maiores assumenda sit distinctio animi ea voluptas! Natus voluptatibus fuga nemo, ut
+                molestiae sequi quo voluptatem quod corporis placeat dolor sed voluptatum asperiores, odio commodi eius?
+                Adipisci debitis suscipit sapiente praesentium tempora illum unde dignissimos architecto rem, vitae
+                perferendis a consequuntur ex recusandae quasi omnis.
+            </p>
+
+            <div class="flexContainer">
+                <% cursos.forEach(element=> { %>
+                    <article>
+                        <h2>
+                            <%=element.nombre%>
+                        </h2>
+                        <div>
+                         <img src="assets/<%= element.url %>" alt="<%=element.alt%>">
+                        </div>
+                        <p>
+                            <%= element.descripcion %>
+                        </p>
+                    </article>
+                    <% }) %>
+            </div>
+        </main>
+
+        <%- include ('templates/footer.ejs') %>
