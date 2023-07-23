@@ -108,6 +108,7 @@ ul {
     gap: 10px;
     margin: 10px;
     font-size: 2rem;
+    text-decoration:none;
 }
 
 label {
