@@ -5,14 +5,17 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node script.js",
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "ggmj",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.0.1"
   }
 }
